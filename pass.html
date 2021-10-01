@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 6</title>
+</head>
+
+<body>
+    <h1>Pass phrase by Keerthana Ragut</h1>
+
+    <h2>Getting input</h2>
+
+    <form>
+        <label for="secret_word">Enter the secret phrase </label>
+        <input type="password" id="secret_word" name="secret_word" min=10 max=50 step=2 value=Letmein> <br>
+        <br>
+        <label for="guess">Enter a phrase</label>
+        <input type="text" id="guess" name="guess" autofocus> <br>
+        <br>
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        var correct = 0;
+        var wrong = 0;
+
+        function processPhrase() {
+            //console.log("Getting form values")
+            secret = document.getElementById("secret_word").value
+            guess = document.getElementById("guess").value
+            //confirmed = confirm("Are these the values? "+secret+" and "+guess)
+            out = document.getElementById("result")
+            if (secret == guess) {
+                correct++
+                alert("Access allowed")
+
+            } else {
+                wrong++
+                alert("Access denied")
+            }
+            out.innerHTML = "correct score :" + correct + " wrong score : " + wrong
+        }
+    </script>
+    <div>
+        <img src="rabbit.jpg" height="200" width="200" onclick=" newImage()" id="image">
+        <script>
+            var usingImage = 1
+
+            function newImage() {
+                switch (usingImage) {
+                    case 1:
+                        document.getElementById("image").src = "rabbit.jpg"
+                        usingImage = 2
+                        //img.src = "tiger.jpg"
+                        break
+                    case 2:
+                        // code block
+                        document.getElementById("image").src = "tiger.jpg"
+                        usingImage = 3
+                        break
+                    case 3:
+                        // code block
+                        document.getElementById("image").src = "giraffe.jpeg"
+                        usingImage = 1
+                        break
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
