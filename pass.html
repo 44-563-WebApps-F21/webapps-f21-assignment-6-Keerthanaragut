@@ -4,7 +4,12 @@
 <head>
     <title>Assignment 6</title>
 </head>
-
+<style>
+    form{
+        background-color: lightsteelblue;
+        border: solid plum;
+    }
+</style>
 <body>
     <h1>Pass phrase by Keerthana Ragut</h1>
 
@@ -38,6 +43,9 @@
             } else {
                 wrong++
                 alert("Access denied")
+                if(wrong > 3){
+                    alert("account locked")
+                }
             }
             out.innerHTML = "correct score :" + correct + " wrong score : " + wrong
         }
